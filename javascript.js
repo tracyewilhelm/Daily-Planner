@@ -1,19 +1,57 @@
-var agendaInput = document.querySelector(".agenda");
+var nineAMText = $("#nineAMText");
+var nineAMButton = $("#nineAMButton");
+var updateAgenda = $(".agenda");
+var currentTime = $("#currentDay");
+var timeTableEl = $(".timeTable");
+var currentHour = currentTime;
 
-var saveButton = $(".btn");
-localStorage.getItem("newItem", JSON.parse(newItem));
+currentTime.append(moment().format("MMMM Do YYYY, h:mm:ss a"));
 
-saveButton.addEventListener("click", function (event) {
-  event.preventDefault();
+for (i = 0; i < updateAgenda.length; i++) {
+  // console.log(updateAgenda[i]);
+  var idName = updateAgenda[i].id;
+  console.log(idName);
+  var agendaText = localStorage.getItem(idName);
+  console.log(agendaText);
+  if (agendaText) {
+    updateAgenda[i].value = agendaText;
+  }
+}
 
-  var newItem = {
-    updateAgenda: agendaInput.value,
-  };
-
-  console.log(newItem);
-  localStorage.setItem("newItem", JSON.stringify(newItem));
+timeTableEl.on("click", ".saveButton", function (event) {
+  console.log("save Button?");
+  var newAgendaItem = $(event.target).parent().prev().children(".agenda").val();
+  var timeID = $(event.target).parent().prev().children(".agenda").attr("id");
+  console.log({ newAgendaItem, timeID });
+  localStorage.setItem(timeID, newAgendaItem);
 });
-console.log(localStorage);
+
+if (currentHour < hour) {
+  $(this).removeClass("future");
+  $(this).removeClass("present");
+  $(this).addClass("past");
+} else if (currentHour === hour) {
+  $(this).removeClass("past");
+  $(this).removeClass("future");
+  $(this).addClass("present");
+} else {
+  $(this).removeClass("present");
+  $(this).removeClass("past");
+  $(this).addClass("future");
+}
+
+// nineAMButton.on("click", function (event) {
+//   event.preventDefault();
+
+//   nineAMTextSave();
+// });
+
+// function nineAMTextSave() {
+//   var userInputNineAM = nineAMText.val();
+//   localStorage.setItem("userInputNineAM", JSON.stringify(userInputNineAM));
+// }
+// newAgendaItem();
+
 //when they click a save button (does it need to be a new function for each save button?)
 //the information is stored in local storage
 
