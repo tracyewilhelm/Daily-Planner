@@ -14,8 +14,9 @@ textarea {
 }
 
 .jumbotron {
+  font-family: "redressed", cursive;
   text-align: center;
-  background-color: transparent;
+  background-color: rgb(213, 2, 2);
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
