@@ -3,7 +3,40 @@ var nineAMButton = $("#nineAMButton");
 var updateAgenda = $(".agenda");
 var currentTime = $("#currentDay");
 var timeTableEl = $(".timeTable");
-var currentHour = currentTime;
+var date = new Date();
+var currentHour = date.getHours();
+
+var hourRows = $(".hour");
+// .attr("datetime");
+
+console.log(currentHour);
+console.log(hourRows);
+console.log(updateAgenda);
+
+$(".hour").each(function () {
+  var thisRowHour = parseInt($(this).attr("datetime"));
+  //console.log(thisRowHour);
+  // console.log(currentHour);
+  var tableHeader = $(this).parent().parent();
+  if (currentHour > thisRowHour) {
+    tableHeader.removeClass("future");
+    tableHeader.removeClass("present");
+    tableHeader.addClass("past");
+  } else if (currentHour === thisRowHour) {
+    tableHeader.removeClass("past");
+    tableHeader.removeClass("future");
+    tableHeader.addClass("present");
+  } else {
+    tableHeader.removeClass("present");
+    tableHeader.removeClass("past");
+    tableHeader.addClass("future");
+  }
+});
+
+for (let i = 0; i < hourRows.length; i++) {
+  var element = hourRows[i];
+  console.log(element);
+}
 
 currentTime.append(moment().format("MMMM Do YYYY, h:mm:ss a"));
 
@@ -25,34 +58,3 @@ timeTableEl.on("click", ".saveButton", function (event) {
   console.log({ newAgendaItem, timeID });
   localStorage.setItem(timeID, newAgendaItem);
 });
-
-if (currentHour < hour) {
-  $(this).removeClass("future");
-  $(this).removeClass("present");
-  $(this).addClass("past");
-} else if (currentHour === hour) {
-  $(this).removeClass("past");
-  $(this).removeClass("future");
-  $(this).addClass("present");
-} else {
-  $(this).removeClass("present");
-  $(this).removeClass("past");
-  $(this).addClass("future");
-}
-
-// nineAMButton.on("click", function (event) {
-//   event.preventDefault();
-
-//   nineAMTextSave();
-// });
-
-// function nineAMTextSave() {
-//   var userInputNineAM = nineAMText.val();
-//   localStorage.setItem("userInputNineAM", JSON.stringify(userInputNineAM));
-// }
-// newAgendaItem();
-
-//when they click a save button (does it need to be a new function for each save button?)
-//the information is stored in local storage
-
-//then the information is retrieved from local storage and kept in the text area (not actually a text area)

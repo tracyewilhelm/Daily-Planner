@@ -29,7 +29,7 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <table class="table table-striped text-center">
+      <table class="table text-center">
         <thead>
           <tr>
             <!-- <th scope="col">Time</th> -->
@@ -39,48 +39,50 @@
           </tr>
         </thead>
         <tbody class="timeTable">
-          <tr class="input-group">
-            <th scope="row" class="input-group-text col-3" id="nineAM"><time>9:00</time></th>
+          <tr class="input-group past present future">
+            <th scope="row" class="input-group-text col-3" id="nineAM">
+              <time class="hour" datetime="9:00">Time to Work</time>
+            </th>
             <td class="col-8"> <textarea class="form-control form-control-lg agenda " id="nineAMText"type="text"></textarea></td>
             <td class="col-1"><button class="btn btn-outline-secondary saveButton" id="nineAMButton" type="button">Save</button></td>
           </tr>
-        <tr class="input-group">
-            <th scope="row" class="input-group-text col-3" id="tenAM"><time>10:00</time></th>
+        <tr class="input-group past present future">
+            <th scope="row" class="input-group-text col-3" id="tenAM"><time class="hour" datetime="10:00">Morning Snack</time></th>
             <td class="col-8"col-> <textarea class="form-control form-control-lg agenda" id="tenAMText" type="text"></textarea></td>
             <td class="col-1"><button class="btn btn-outline-secondary saveButton" type="button">Save</button></td>
         </tr>
-        <tr class="input-group">
-            <th scope="row" class="input-group-text col-3" id="elevenAM"><time>11:00</time></th>
+        <tr class="input-group past present future">
+            <th scope="row" class="input-group-text col-3" id="elevenAM"><time class="hour" datetime="11:00">Recess</time></th>
             <td class="col-8"> <textarea class="form-control form-control-lg agenda" id="elevenAMText" type="text"></textarea></td>
             <td class="col-1"><button class="btn btn-outline-secondary saveButton" type="button">Save</button></td>
         </tr>
-        <tr class="input-group">
-            <th scope="row" class="input-group-text col-3" id="twelvePM"><time>12:00</time></th>
+        <tr class="input-group past present future">
+            <th scope="row" class="input-group-text col-3" id="twelvePM"><time class="hour" datetime="12:00">LUNCH!</time></th>
             <td class="col-8"> <textarea class="form-control form-control-lg agenda" id="twelvePMText" type="text"></textarea></td>
             <td class="col-1"><button class="btn btn-outline-secondary saveButton" type="button">Save</button></td>
         </tr>
-        <tr class="input-group">
-            <th scope="row" class="input-group-text col-3" id="onePM"><time>1:00</time></th>
+        <tr class="input-group past present future">
+            <th scope="row" class="input-group-text col-3" id="onePM"><time class="hour" datetime="13:00">Nap Time</time></th>
             <td class="col-8"> <textarea class="form-control form-control-lg agenda" id="onePMText" type="text"></textarea></td>
             <td class="col-1"><button class="btn btn-outline-secondary saveButton" type="button">Save</button></td>
         </tr>
-        <tr class="input-group">
-            <th scope="row" class="input-group-text col-3" id="twoPM"><time>2:00</time></th>
+        <tr class="input-group past present future">
+            <th scope="row" class="input-group-text col-3" id="twoPM"><time class="hour" datetime="14:00">Story Time</time></th>
             <td class="col-8"> <textarea class="form-control form-control-lg agenda" id="twoPMText" type="text"></textarea></td>
             <td class="col-1"><button class="btn btn-outline-secondary saveButton" type="button">Save</button></td>
         </tr>
-        <tr class="input-group">
-            <th scope="row" class="input-group-text col-3" id="threePM"><time>3:00</time></th>
+        <tr class="input-group past present future">
+            <th scope="row" class="input-group-text col-3" id="threePM"><time class="hour" datetime="15:00">Afternoon Snack</time></th>
             <td class="col-8"> <textarea class="form-control form-control-lg agenda" id="threePMText" type="text"></textarea></td>
             <td class="col-1"><button class="btn btn-outline-secondary saveButton" type="button">Save</button></td>
         </tr>
-        <tr class="input-group">
-            <th scope="row" class="input-group-text col-3" id="fourPM"><time>4:00</time></th>
+        <tr class="input-group past present future">
+            <th scope="row" class="input-group-text col-3" id="fourPM"><time class="hour" datetime="16:00">Wrap Things Up</time></th>
             <td class="col-8"> <textarea class="form-control form-control-lg agenda" id="fourPMText" type="text"></textarea></td>
             <td class="col-1"co><button class="btn btn-outline-secondary saveButton" type="button">Save</button></td>
         </tr>
-        <tr class="input-group">
-            <th scope="row" class="input-group-text col-3" id="fivePM"><time>5:00</time></th>
+        <tr class="input-group past present future">
+            <th scope="row" class="input-group-text col-3" id="fivePM"><time class="hour" datetime="17:00">Time to Leave</time></th>
             <td class="col-8"c> <textarea class="form-control form-control-lg agenda" id="fivePMText" type="text"></textarea></td>
             <td class="col-1"><button class="btn btn-outline-secondary saveButton" type="button">Save</button></td>
         </tr>
